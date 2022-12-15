@@ -2,8 +2,8 @@ import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import LoginCreate from './LoginCreate';
-import LoginLost from './LoginLost';
-import LoginReset from './LoginReset';
+import LoginPasswordLost from './LoginPasswordLost';
+import LoginPasswordReset from './LoginPasswordReset';
 import { UserContext } from '../../UserContext';
 import styles from './Login.module.css'
 import NotFound from '../NotFound';
@@ -18,8 +18,8 @@ const Login = () => {
         <Routes>
           <Route path='/' element={<LoginForm />} />
           <Route path='criar' element={<LoginCreate />} />
-          <Route path='perdeu' element={<LoginLost />} />
-          <Route path='resetar' element={<LoginReset />} />
+          <Route path='perdeu' element={<LoginPasswordLost />} />
+          <Route path='resetar' element={<LoginPasswordReset />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
