@@ -1,6 +1,7 @@
 import React from 'react'
 import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
+import PropTypes from 'prop-types';
 
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
@@ -43,17 +44,29 @@ const Feed = ({ user }) => {
 
       {!infinite && !user && (
         <p
-        style={{
-          textAlign: 'center',
-          padding: '2rem 0 4rem 0',
-          color: '#888'
-        }}
+          style={{
+            textAlign: 'center',
+            padding: '2rem 0 4rem 0',
+            color: '#888'
+          }}
         >
           Não Existem mais postagens :(
         </p>
       )}
     </div>
   );
+};
+
+Feed.defaultProps = {
+  user: 0,
+};
+
+
+Feed.propTypes = {
+  user: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired
+  ]),
 };
 
 export default Feed;
