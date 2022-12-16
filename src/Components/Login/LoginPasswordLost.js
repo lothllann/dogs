@@ -5,6 +5,7 @@ import userForm from '../../Hooks/userForm';
 import Button from '../Form/Button';
 import Input from '../Form/Input';
 import Error from '../Helper/Error';
+import Head from '../Helper/Head';
 
 const LoginPasswordLost = () => {
   const login = userForm();
@@ -25,6 +26,7 @@ const LoginPasswordLost = () => {
 
   return (
     <section>
+      <Head title='Perdeu a senha?' />
       <h1 className='title'>Perdeu a Senha?</h1>
 
       {data ?
